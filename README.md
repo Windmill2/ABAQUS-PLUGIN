@@ -1,2 +1,37 @@
-# ABAQUS-PLUGIN
-An Abaqus plugin for multi-pass welding, including analysis step generation, element birth and death, welding heat input, model conversion, and predefined temperature field import.
+# Abaqus 多层多道焊接插件 (Abaqus Multi-pass Welding Plugin)
+
+## 📖 项目简介 (Introduction)
+本插件专为 Abaqus 软件设计，旨在简化和自动化多层多道焊接过程的有限元建模与计算。通过封装复杂的 Python 脚本和界面交互，帮助用户快速完成复杂的焊接热力学及力学分析。
+
+## ✨ 主要功能 (Features)
+- **分析步生成**：自动生成焊接过程所需的多分析步（Step），如加热步、冷却步。
+- **生死单元（Element Birth and Death）**：自动控制焊缝单元的激活与失效，模拟焊料的填充过程。
+- **焊接热输入**：支持定义双椭球热源（Goldak）或高斯热源，便捷施加热流密度。
+- **模型转换**：支持网格、材料属性或边界条件的一键转换与复用。
+- **预定义温度场导入**：支持读取外部温度场结果（如 .odb 或 .csv），作为后续力学分析的初始场或预定义场。
+- **自动化脚本**：内置 Python 脚本，减少手动操作，提高建模效率。
+
+## 🛠️ 环境要求 (Requirements)
+- **Abaqus 6.14** (及以上版本，建议在 6.14 环境下测试通过)
+- **Python 2.7** (Abaqus 6.14 内置版本)
+- 操作系统：Windows 10 / Windows 7 (64-bit)
+
+## 🚀 安装与使用 (Installation & Usage)
+1. 下载本仓库的所有文件，解压至本地。
+2. 将插件文件夹放置于 Abaqus 的插件目录下（通常为 `C:\Users\你的用户名\abaqus_plugins`，或通过 `File -> Set Work Directory` 设置）。
+3. 打开 Abaqus CAE，在菜单栏 `Plug-ins` 中找到本插件。
+4. 根据图形界面提示，输入参数并生成模型。
+
+## 📂 目录结构 (Project Structure)
+- `main_plugin.py`: 插件主入口，负责界面（GUI）的生成与事件响应。
+- `core/`: 核心算法代码，包含分析步生成、生死单元控制、热源施加等逻辑。
+- `icons/`: 插件界面使用的图标文件。
+- `docs/`: 用户手册或教程文档。
+
+## 📝 待办事项 (TODO)
+- [ ] 优化 GUI 界面的用户交互体验。
+- [ ] 增加更多类型的焊接热源（如带状热源）。
+- [ ] 添加视频教程与使用示例。
+
+## 📄 开源协议 (License)
+本项目采用 MIT 协议开源，欢迎 Fork 和 PR。
